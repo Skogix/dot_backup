@@ -1,0 +1,8 @@
+// https://github.com/sainnhe/dotfiles/blob/master/.config/nvim/coc-settings.json
+{
+    "suggest.enablePreview":true,
+    "suggest.noselect":false,
+    "diagnostic.virtualText": true,
+    "codeLens.separator": "//",
+    "codeLens.enable":true
+}

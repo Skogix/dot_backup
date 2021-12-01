@@ -22,4 +22,4 @@
 
 .config/ranger/rc.conf
 
-.vim/plugged/coc.nvim/.vim/coc-settings.json
+.config/nvim/coc-settings.json
