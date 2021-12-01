@@ -51,3 +51,4 @@ install vimium lastpass ublock-origin
 - [ ] screenshot folder
 - [ ] install xclip
 - [ ] openshot
+- [ ] fsharp with coc
