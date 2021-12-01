@@ -22,7 +22,7 @@ alias picomrc="nvim ~/.config/i3/picom.conf"
 alias vimrc="nvim ~/.config/nvim/init.vim"
 alias tmuxrc="nvim ~/.tmux.conf"
 # readme
-alias readme="emacs ~/skogix/README.org &; disown"
+#alias readme="emacs ~/skogix/README.org &; disown"
 # ls
 alias la="exa -A --color=auto"
 alias d="cd /run/media/skogix/D"

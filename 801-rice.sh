@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo pacman -S python-pywal
+sudo pacman -S python-pywal bat
