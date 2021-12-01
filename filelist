@@ -9,6 +9,7 @@
 .config/alacritty/alacritty.yml
 .config/i3/config
 .config/i3/config-polybar
-.config/i3/i3block-original
+.config/i3/i3blocks-original.conf
 .config/i3/picom.conf
 .config/user-dirs.dirs
+.config/variety/variety.conf
