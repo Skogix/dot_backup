@@ -16,11 +16,7 @@ install vimium lastpass ublock-origin
 ###### 004-terminal
 - logout for zsh
 
-
-
-
-
 # todo
-install coc extensions
-
-
+- aliases
+- tmux sessions 
+- tmux/vim copy
