@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo pacman -S python-pywal bat
+sudo pacman -S python-pywal bat cmatrix ranger w3m

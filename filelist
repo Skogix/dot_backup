@@ -19,3 +19,5 @@
 .config/user-dirs.dirs
 
 .config/variety/variety.conf
+
+.config/ranger/rc.conf
