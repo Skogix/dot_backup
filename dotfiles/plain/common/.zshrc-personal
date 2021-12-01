@@ -1,0 +1,56 @@
+export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
+export PATH="$HOME/Skogix/bin/exercism:$PATH"
+alias connectwifi="nmcli device wifi connect pipis_5G_nya password 0704284665"
+
+## SKOGIX ###
+export EDITOR="/usr/bin/nvim"
+# basic
+alias mkdir="mkdir -pv"
+alias c="clear"
+#alias mount="mount |column -t"
+#alias f.="find . -name "
+# keyboard
+alias asdf="/usr/bin/setxkbmap se us_dvorak -option ; /usr/bin/setxkbmap se us_dvorak -option \"caps:swapescape\""
+alias asdfus="/usr/bin/setxkbmap us" 
+alias aoeu="/usr/bin/setxkbmap se"
+alias starre="/usr/bin/setxkbmap se -option lv3:ralt_alt"
+/usr/bin/setxkbmap -option "caps:swapescape"
+# config
+alias zshrc="nvim ~/dot/zshrc"
+alias i3rc="nvim ~/dot/i3rc"
+alias picomrc="nvim ~/dot/picom.conf"
+alias vimrc="nvim ~/dot/init.vim"
+alias tmuxrc="nvim ~/dot/tmux.conf"
+# readme
+alias readme="emacs ~/skogix/README.org &; disown"
+# ls
+alias la="exa -A --color=auto"
+alias d="cd /run/media/skogix/D"
+alias l="exa -l --color=auto"
+alias l.="exa -l .* --color=auto"
+alias la="exa -d .* --color=auto"
+# cd
+alias cd..="cd .."
+alias ..="cd .."
+alias ...="cd ../../../"
+alias ....="cd ../../../../"
+alias .....="cd ../../../../"
+alias .4="cd ../../../../"
+alias .5="cd ../../../../.."
+# vim
+alias vi="neovide"
+alias vim="nvim"
+alias edit="nvim"
+# pacman
+alias install="sudo pacman -S"
+alias remove="sudo pacman -Rsc"
+alias update="sudo pacman -Syu"
+# tmux
+alias config="tmux attach -t config"
+# fsharp
+alias fsharppractice="cd ~/src/Practice/exercism/fsharp/"
+function lazygit() {
+    git add .
+    git commit -a -m "$1"
+    git push
+}
