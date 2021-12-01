@@ -7,7 +7,7 @@
     - cd dot
     - dotgit restore -v
 ###### 001-init
-# firefox
+- firefox
 install vimium lastpass ublock-origin
 ###### 002-update
 - reboot
