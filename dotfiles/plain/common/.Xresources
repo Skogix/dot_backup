@@ -231,4 +231,4 @@ UXTerm*boldMode: false
 UXTerm*colorBDMode: true
 UXTerm*colorBD: rgb:ff/ff/ff
 
-!wal -R
+wal -R
