@@ -1,1 +1,6 @@
+.zshrc
 .zshrc-personal
+.bashrc
+.gitconfig
+.tmux.conf
+.Xresources
