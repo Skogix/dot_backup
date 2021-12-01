@@ -103,7 +103,7 @@ exec_always setxkbmap se us_dvorak
 exec_always xrandr --output $firstMonitor --mode 1920x1080 --rate 144 --primary
 exec_always xrandr --output $secondMonitor --mode 1024x768 --rate 60 --right-of $firstMonitor
 # Background apps
-exec --no-startup-id unclutter --timeout 1&
+exec_alway --no-startup-id unclutter --timeout 1 &
 exec --no-startup-id redshift -l 61.691980:13.136770
 exec --no-startup-id volumeicon
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
@@ -540,7 +540,13 @@ bar {
 #bindsym $mod+F9 exec --no-startup-id evolution;focus
 #bindsym $mod+F10 exec --no-startup-id spotify;focus
 #bindsym control+mod1+s exec --no-startup-id spotify;focus
-#bindsym Print exec --no-startup-id scrot 'ArcoLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'
+#bindsym Print exec --no-startup-id scrot 'ArcoLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg'
+#bindsym Print exec "scrot -e 'mv $f ~/tmp &&  xclip -selection clipboard -t image/png -i ~/tmp/$n'; sleep 1; exec notify-send 'screenshot has been saved to ~/tmp'"
+#bindsym $mod+Print --release exec "scrot -ue 'mv $f ~/tmp && xclip -selection clipboard -t image/png -i ~/tmp/$n'; sleep 1; exec notify-send 'screenshot has been saved to ~/tmp'"
+#bindsym $mod+Shift+Print --release exec "notify-send 'selection will be saved to ~/tmp'; scrot -se 'mv $f ~/tmp && xclip -selection clipboard -t image/png -i ~/tmp/$n'"
+#bindsym Print exec --no-startup-id scrot '~/data/pics/screenshots/%Y-%m-%d-%s-$wx$h.jpg' -s
+bindsym --release Print exec "scrot 'scrot-%Y-%m-%d_%h-%m-%s_$wx$h.png' -e 'mv $f ~/tmp && xclip -t image/png ~/tmp/$f -sel clip' -s"
+#bindsym $mod+Print exec --no-startup-id scrot 'ArcoLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'
 #bindsym Control+Print exec --no-startup-id xfce4-screenshooter
 #bindsym Control+Shift+Print exec --no-startup-id gnome-screenshot -i
 #bindsym control+mod1+a exec --no-startup-id xfce4-appfinder

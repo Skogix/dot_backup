@@ -18,6 +18,7 @@ alias i3rc="nvim ~/.config/i3/config"
 alias picomrc="nvim ~/.config/i3/picom.conf"
 alias vimrc="nvim ~/.config/nvim/init.vim"
 alias tmuxrc="nvim ~/.tmux.conf"
+alias term="alacritty -e tmux a &; ;disown; exit "
 # readme
 #alias readme="emacs ~/skogix/README.org &; disown"
 #}}}

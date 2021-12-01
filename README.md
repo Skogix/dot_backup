@@ -47,3 +47,7 @@ install vimium lastpass ublock-origin
   - [x] .config/i3/i3block-original
   - [x] .config/i3/picom.conf
   - [x] .config/user-dirs.dirs
+- [ ] obs
+- [ ] screenshot folder
+- [ ] install xclip
+- [ ] openshot
