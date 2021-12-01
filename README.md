@@ -30,8 +30,7 @@ install vimium lastpass ublock-origin
 - logout for zsh
 
 ### todo
-
-- [ ] aliases
+- [ ] vim folding
 - [ ] tmux sessions
 - [ ] tmux/vim copy
 - [ ] go over dotfiles

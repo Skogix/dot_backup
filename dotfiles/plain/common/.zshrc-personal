@@ -1,21 +1,18 @@
+#{{{ path
 export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
 export PATH="$HOME/Skogix/bin/exercism:$PATH"
-alias connectwifi="nmcli device wifi connect pipis_5G_nya password 0704284665"
-
-## SKOGIX ###
+#}}}
+#{{{ export
 export EDITOR="/usr/bin/nvim"
-# basic
-alias mkdir="mkdir -pv"
-alias c="clear"
-#alias mount="mount |column -t"
-#alias f.="find . -name "
-# keyboard
+#}}}
+#{{{ keyboard
 alias asdf="/usr/bin/setxkbmap se us_dvorak -option ; /usr/bin/setxkbmap se us_dvorak -option \"caps:swapescape\""
 alias asdfus="/usr/bin/setxkbmap us" 
 alias aoeu="/usr/bin/setxkbmap se"
 alias starre="/usr/bin/setxkbmap se -option lv3:ralt_alt"
 /usr/bin/setxkbmap -option "caps:swapescape"
-# config
+#}}}
+#{{{ rc
 alias zshrc="nvim ~/.zshrc-personal"
 alias i3rc="nvim ~/.config/i3/config"
 alias picomrc="nvim ~/.config/i3/picom.conf"
@@ -23,7 +20,11 @@ alias vimrc="nvim ~/.config/nvim/init.vim"
 alias tmuxrc="nvim ~/.tmux.conf"
 # readme
 #alias readme="emacs ~/skogix/README.org &; disown"
+#}}}
+#{{{ movement
 # ls
+alias mkdir="mkdir -pv"
+alias c="clear"
 alias la="exa -A --color=auto"
 alias d="cd /run/media/skogix/D"
 alias l="exa -l --color=auto"
@@ -37,6 +38,8 @@ alias ....="cd ../../../../"
 alias .....="cd ../../../../"
 alias .4="cd ../../../../"
 alias .5="cd ../../../../.."
+#}}}
+#{{{ editing
 # vim
 alias vi="neovide"
 alias vim="nvim"
@@ -45,12 +48,19 @@ alias edit="nvim"
 alias install="sudo pacman -S"
 alias remove="sudo pacman -Rsc"
 alias update="sudo pacman -Syu"
-# tmux
+# tmux sessions
 alias config="tmux attach -t config"
-# fsharp
+#}}}
+#{{{ programming
+#{{{ fsharp
 alias fsharppractice="cd ~/src/Practice/exercism/fsharp/"
 function lazygit() {
     git add .
     git commit -a -m "$1"
     git push
 }
+#}}}
+#}}}
+#{{{ misc
+alias connectwifi="nmcli device wifi connect pipis_5G_nya password 0704284665"
+#}}}

@@ -363,3 +363,8 @@ require'terminal'.setup()
 require('telescope').load_extension('gh')
 require'nvim-web-devicons'.get_icons()
 EOF
+""""""""""""""""""""""""
+"  Misc   
+""""""""""""""""""""""""
+"" TODO
+set foldmethod=marker
