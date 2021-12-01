@@ -16,11 +16,11 @@ alias aoeu="/usr/bin/setxkbmap se"
 alias starre="/usr/bin/setxkbmap se -option lv3:ralt_alt"
 /usr/bin/setxkbmap -option "caps:swapescape"
 # config
-alias zshrc="nvim ~/dot/zshrc"
-alias i3rc="nvim ~/dot/i3rc"
-alias picomrc="nvim ~/dot/picom.conf"
-alias vimrc="nvim ~/dot/init.vim"
-alias tmuxrc="nvim ~/dot/tmux.conf"
+alias zshrc="nvim ~/.zshrc-personal"
+alias i3rc="nvim ~/.config/i3/config"
+alias picomrc="nvim ~/.config/i3/picom.conf"
+alias vimrc="nvim ~/.config/nvim/init.vim"
+alias tmuxrc="nvim ~/.tmux.conf"
 # readme
 alias readme="emacs ~/skogix/README.org &; disown"
 # ls

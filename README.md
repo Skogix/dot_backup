@@ -31,6 +31,20 @@ install vimium lastpass ublock-origin
 
 ### todo
 
-- aliases
-- tmux sessions
-- tmux/vim copy
+- [ ] aliases
+- [ ] tmux sessions
+- [ ] tmux/vim copy
+- [ ] go over dotfiles
+  - [ ] .zshrc
+  - [ ] .zshrc-personal
+  - [ ] .bashrc
+  - [ ] .gitconfig
+  - [ ] .tmux.conf
+  - [ ] .Xresources
+  - [ ] .config/nvim/init.vim
+  - [ ] .config/alacritty/alacritty.yml
+  - [ ] .config/i3/config
+  - [ ] .config/i3/config-polybar
+  - [ ] .config/i3/i3block-original
+  - [ ] .config/i3/picom.conf
+  - [ ] .config/user-dirs.dirs
