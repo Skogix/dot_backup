@@ -1,4 +1,5 @@
 #!/bin/bash
-~/dot/lazygit.sh "UPDATEALL::: $1"
+currentTime=$(date)
+~/dot/lazygit.sh "UPDATEALL:$currentTime: $1"
 cd ~/data
-~/dot/lazygit.sh "UPDATEALL::: $1"
+~/dot/lazygit.sh "UPDATEALL:$currentTime: $1"
