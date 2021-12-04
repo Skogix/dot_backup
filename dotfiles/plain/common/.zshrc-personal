@@ -19,8 +19,6 @@ alias picomrc="nvim ~/.config/i3/picom.conf"
 alias vimrc="nvim ~/.config/nvim/init.vim"
 alias tmuxrc="nvim ~/.tmux.conf"
 alias term="alacritty -e tmux a &; ;disown; exit "
-# readme
-#alias readme="emacs ~/skogix/README.org &; disown"
 #}}}
 #{{{ movement
 # ls
@@ -52,6 +50,9 @@ alias update="sudo pacman -Syu"
 # tmux sessions
 alias config="tmux attach -t config"
 #}}}
+#{{{ org
+alias readme="vim ~/org/wiki/index.wiki"
+#}}
 #{{{ programming
 #{{{ fsharp
 alias fsharppractice="cd ~/src/Practice/exercism/fsharp/"

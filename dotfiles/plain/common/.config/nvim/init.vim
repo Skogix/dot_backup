@@ -39,8 +39,8 @@ set nohlsearch
 set ignorecase smartcase
 set hidden
 set noerrorbells
-set tabstop=4 softtabstop=4
-set shiftwidth=4
+set tabstop=2 softtabstop=2
+set shiftwidth=2
 set expandtab
 set smartindent
 set nu
@@ -116,16 +116,12 @@ Plug 'christoomey/vim-tmux-navigator'
 "Plug 'deoplete-plugins/deoplete-lsp'
 " comments
 Plug 'preservim/nerdcommenter', { 'commit': 'a5d1663' }
-" org mode
-Plug 'jceb/vim-orgmode'
-Plug 'vim-scripts/utl.vim'
-Plug 'mattn/calendar-vim'
-Plug 'tpope/vim-speeddating'
-Plug 'inkarkat/vim-SyntaxRange'
 " primeagen
 " Plug 'ThePrimeagen/vim-be-good'
 " rice pywal
 Plug 'dylanaraps/wal.vim'
+" vimwiki
+Plug 'vimwiki/vimwiki'
 "" End
 endif
 call plug#end()
@@ -148,6 +144,7 @@ else
     nmap <silent> <leader>n <Plug>(coc-diagnostic-next)
     nmap <silent> <leader><S-n> <Plug>(coc-diagnostic-prev)
     nnoremap ca <Cmd>:Telescope coc code_actions theme=ivy<Cr>
+    nnoremap gt <Cmd>:Telescope coc type_definitions<Cr>
     "vnoremap <leader>ca <Cmd>:Telescope coc code_line_actions<Cr>
     nnoremap <leader>coc <Cmd>:Telescope coc commands<Cr>
     nnoremap <leader>tele <Cmd>:Telescope commands<Cr>
@@ -157,17 +154,16 @@ else
     nnoremap <leader>def <Cmd>:Telescope coc definitions<Cr>
     nnoremap <leader>dec <Cmd>:Telescope coc declarations<Cr>
     nnoremap <leader>imp <Cmd>:Telescope coc implementations<Cr>
-    nnoremap <leader>tdef <Cmd>:Telescope coc type_definitions<Cr>
     nnoremap <leader>dia <Cmd>:Telescope coc diagnostics<Cr>
     nnoremap <leader>sym <Cmd>:Telescope coc document_symbols<Cr>
     nnoremap <leader>wsym <Cmd>:Telescope coc workspace_symbols<Cr>
     nnoremap <leader>wnn <Cmd>:Telescope coc workspace_diagnostics<Cr>
-    nnoremap <silent> sh :call <SID>show_documentation()<Cr>
-	nnoremap <leader>+ <Cmd>:Telescope ultisnips<Cr>
+    nnoremap <silent>sh :call <SID>show_documentation()<Cr>
+	  nnoremap <leader>+ <Cmd>:Telescope ultisnips<Cr>
     nmap <leader>rn <Cmd>:CocCommand document.renameCurrentWord<Cr>
 	"nmap <leader>rn <Plug>(coc-rename)
-	xmap <leader>format  <Plug>(coc-format-selected)
-	nmap <leader>format  <Plug>(coc-format-selected)
+    map <leader>format  <Plug>(coc-format-selected)
+    map <leader>format  <Plug>(coc-format-selected)
     xmap ca  <Plug>(coc-codeaction-selected)
     nmap <leader>ca  <Plug>(coc-codeaction-selected)
     nmap <leader>ca  <Plug>(coc-fix-current)
@@ -193,24 +189,26 @@ else
 	nmap <silent> <C-i> <Plug>(coc-cursors-position)
 	"nmap <silent> <C-d> <Plug>(coc-cursors-word)
 	xmap <silent> <C-i> <Plug>(coc-cursors-range)
-    nmap <leader>x  <Plug>(coc-cursors-operator)
+  nmap <leader>x  <Plug>(coc-cursors-operator)
 " use normal command like `<leader>xi(`
+  "xnoremap <leader>update <cmd>VimWikiAll2HTML<cr>
 """ Navigation
     nnoremap <C-P> <cmd>Telescope find_files<cr>
     nnoremap <C-T> <cmd>Telescope<cr>
     nnoremap <C-T>t <cmd>Telescope find_files theme=dropdown<cr>
     nnoremap <C-N> <cmd>Telescope file_browser<cr>
     nnoremap <C-S-P> <cmd>Telescope git_files<cr>
-	nnoremap <C-T>repo <cmd>Telescope repo list<cr>
+	  nnoremap <C-T>repo <cmd>Telescope repo list<cr>
     nnoremap <leader>p <cmd>Telescope live_grep<cr>
     nnoremap <leader>help <cmd>Telescope help_tags<cr>
     nnoremap <leader>rr <cmd>source ~/.config/nvim/init.vim<cr><cmd>echo "Sourced vim.rc"<cr>
+    nnoremap <leader>vimrc <cmd>vsplit<cr><cmd>:e ~/.config/nvim/init.vim<cr>
     nnoremap <c-j> <c-w>j
     nnoremap <c-k> <c-w>k
     nnoremap <c-h> <c-w>h
     nnoremap <c-l> <c-w>l
-    nnoremap zh zm
-    nnoremap zl zR
+    "nnoremap zh zm
+    "nnoremap zl zR
 """ NerdCommenter
     let g:NERDCreateDefaultMappings = 0
     let g:NERDCompactSexyComs = 1
@@ -368,3 +366,28 @@ EOF
 """"""""""""""""""""""""
 "" TODO
 set foldmethod=marker
+let g:vimwiki_folding = 'list'
+"" VimWiki
+function! VimwikiFindIncompleteTasks()
+  lvimgrep /- \[ \]/ %:p
+  lopen
+endfunction
+
+function! VimwikiFindAllIncompleteTasks()
+  VimwikiSearch /- \[ \]/
+  lopen
+endfunction
+
+nmap <Leader>wa :call VimwikiFindAllIncompleteTasks()<CR>
+nmap <Leader>wx :call VimwikiFindIncompleteTasks()<CR>
+nmap <S-h> <cmd>bprev<cr>
+nmap <S-l> <cmd>bnext<cr>
+
+let g:vimwiki_list = [{'path': '$HOME/org/wiki',
+      \ 'path_html': '$HOME/skogix.github.io',
+		  \ 'template_path': '$HOME/org/wiki/templates',
+		  \ 'template_default': 'def_template',
+		  \ 'template_ext': '.html'}]
+
+" add the pre tag for inserting code snippets
+let g:vimwiki_valid_html_tags = 'b,i,s,u,sub,sup,kbd,br,hr, pre, script'
