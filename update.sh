@@ -1,2 +1,2 @@
 #!/bin/bash
-~/dot/update.sh test
+~/dot/lazygit.sh "$1"
