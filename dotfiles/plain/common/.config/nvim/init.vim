@@ -90,6 +90,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 Plug 'fannheyward/telescope-coc.nvim'
 Plug 'sheerun/vim-polyglot'
+Plug 'lucasteles/fsi.vim'
 " markdown
 Plug 'ellisonleao/glow.nvim'
 Plug 'nvim-telescope/telescope-media-files.nvim'
@@ -169,6 +170,8 @@ else
     nmap <leader>ca  <Plug>(coc-fix-current)
     nmap <silent> <C-s> <Plug>(coc-range-select)
     xmap <silent> <C-s> <Plug>(coc-range-select)
+
+    nnoremap <silent><leader><A-Return> <cmd>FsiEvalBuffer<cr>
     
     command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 
@@ -391,3 +394,4 @@ let g:vimwiki_list = [{'path': '$HOME/org/wiki',
 
 " add the pre tag for inserting code snippets
 let g:vimwiki_valid_html_tags = 'b,i,s,u,sub,sup,kbd,br,hr, pre, script'
+let g:fsharp#fsi_focus_on_send = 0 " 0 to not to focus.
