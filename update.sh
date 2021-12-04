@@ -1,5 +1,8 @@
 #!/bin/bash
 currentTime=$(date)
+
+vim ~/org/wiki/index.wiki +VimWikiAll2HTML +qall
+
 cd ~/data
 ~/dot/lazygit.sh "UPDATEALL:$currentTime: $1"
 cd ~/dot
