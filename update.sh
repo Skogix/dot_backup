@@ -1,2 +1,4 @@
 #!/bin/bash
-~/dot/lazygit.sh "$1"
+~/dot/lazygit.sh "UPDATEALL::: $1"
+cd ~/data
+~/dot/lazygit.sh "UPDATEALL::: $1"
