@@ -1,3 +1,2 @@
 #!/bin/bash
-cd ~/dot
-lazygit update dot
+~/dot/update.sh test
