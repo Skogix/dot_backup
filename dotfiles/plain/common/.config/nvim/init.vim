@@ -386,12 +386,20 @@ nmap <Leader>wx :call VimwikiFindIncompleteTasks()<CR>
 nmap <S-h> <cmd>bprev<cr>
 nmap <S-l> <cmd>bnext<cr>
 
-let g:vimwiki_list = [{'path': '$HOME/org/wiki',
-      \ 'path_html': '$HOME/skogix.github.io',
-		  \ 'template_path': '$HOME/org/wiki/templates',
-		  \ 'template_default': 'def_template',
-		  \ 'template_ext': '.html'}]
 
 " add the pre tag for inserting code snippets
+let wiki = {}
+let wiki.path = '$HOME/org/wiki'
+let wiki.path_html = '$HOME/skogix.github.io'
+let wiki.template_path = '$HOME/org/wiki/templates'
+let wiki.template_default = '$HOME/def_template'
+let wiki.template_ext = '.html'
+let wiki.nested_syntaxes = {'python': 'python'}
+let g:vimwiki_list = [wiki]
 let g:vimwiki_valid_html_tags = 'b,i,s,u,sub,sup,kbd,br,hr, pre, script'
 let g:fsharp#fsi_focus_on_send = 0 " 0 to not to focus.
+"let g:vimwiki_list = [{'path': '$HOME/org/wiki',
+      "\ 'path_html': '$HOME/skogix.github.io',
+			"\ 'template_path': '$HOME/org/wiki/templates',
+			"\ 'template_default': 'def_template',
+			"\ 'template_ext': '.html'}]
