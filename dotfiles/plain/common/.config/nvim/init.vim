@@ -402,6 +402,6 @@ let g:vimwiki_list = [{'path': '$HOME/org/wiki',
       \ 'path_html': '$HOME/skogix.github.io',
       \ 'template_path': '$HOME/org/wiki/templates',
       \ 'template_default': 'def_template',
+      \ 'nested_syntaxes': {'python': 'python'},
       \ 'template_ext': '.html'}]
 
-      "\ 'nested_syntaxes': {'python': 'python'},
