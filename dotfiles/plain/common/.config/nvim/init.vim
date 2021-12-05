@@ -400,7 +400,8 @@ let g:vimwiki_valid_html_tags = 'b,i,s,u,sub,sup,kbd,br,hr, pre, script'
 let g:fsharp#fsi_focus_on_send = 0 " 0 to not to focus.
 let g:vimwiki_list = [{'path': '$HOME/org/wiki',
       \ 'path_html': '$HOME/skogix.github.io',
-      \ 'nested_syntaxes': {'python': 'python'},
       \ 'template_path': '$HOME/org/wiki/templates',
       \ 'template_default': 'def_template',
       \ 'template_ext': '.html'}]
+
+      "\ 'nested_syntaxes': {'python': 'python'},
