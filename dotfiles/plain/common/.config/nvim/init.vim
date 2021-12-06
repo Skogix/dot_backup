@@ -123,6 +123,7 @@ Plug 'preservim/nerdcommenter', { 'commit': 'a5d1663' }
 Plug 'dylanaraps/wal.vim'
 " vimwiki
 Plug 'vimwiki/vimwiki'
+Plug 'itchyny/calendar.vim'
 "" End
 endif
 call plug#end()
