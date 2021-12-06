@@ -69,6 +69,7 @@ if exists('g:vscode')
     Plug 'asvetliakov/vim-easymotion'
 else
 "" NeoVim
+Plug 'powerman/vim-plugin-AnsiEsc'
 " telescope
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
