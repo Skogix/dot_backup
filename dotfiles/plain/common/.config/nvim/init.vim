@@ -372,10 +372,9 @@ EOF
 """"""""""""""""""""""""
 "" TODO
 set foldmethod=marker
+
+let g:taskwiki_disable_concealcursor="yes"
 let g:vimwiki_folding = 'list'
-set concealcursor-=n
-set conceallevel=2
-let g:vimwiki_conceallevel = 3 
 "" VimWiki
 function! VimwikiFindIncompleteTasks()
   lvimgrep /- \[ \]/ %:p
