@@ -20,8 +20,8 @@
 "  Init 
 """"""""""""""""""""""""
 let mapleader = ' '
-let maplocalleader = ','
 let g:mapleader = ' '
+let maplocalleader = ','
 let g:maplocalleader = ','
 let g:python_host_prog = '/usr/bin/python2'
 let g:python3_host_prog = '/usr/bin/python3'
@@ -124,6 +124,7 @@ Plug 'preservim/nerdcommenter', { 'commit': 'a5d1663' }
 Plug 'dylanaraps/wal.vim'
 " vimwiki
 Plug 'vimwiki/vimwiki'
+Plug 'tools-life/taskwiki'
 Plug 'itchyny/calendar.vim'
 "" End
 endif
@@ -372,6 +373,9 @@ EOF
 "" TODO
 set foldmethod=marker
 let g:vimwiki_folding = 'list'
+set concealcursor-=n
+set conceallevel=2
+let g:vimwiki_conceallevel = 3 
 "" VimWiki
 function! VimwikiFindIncompleteTasks()
   lvimgrep /- \[ \]/ %:p
@@ -406,4 +410,3 @@ let g:vimwiki_list = [{'path': '$HOME/org/wiki',
       \ 'template_default': 'def_template',
       \ 'nested_syntaxes': {'python': 'python'},
       \ 'template_ext': '.html'}]
-
