@@ -195,6 +195,7 @@ else
 	nmap <silent> <C-i> <Plug>(coc-cursors-position)
 	"nmap <silent> <C-d> <Plug>(coc-cursors-word)
 	xmap <silent> <C-i> <Plug>(coc-cursors-range)
+	  nnoremap <leader>color <cmd>call ToggleColors()<cr>
   nmap <leader>x  <Plug>(coc-cursors-operator)
 " use normal command like `<leader>xi(`
   "xnoremap <leader>update <cmd>VimWikiAll2HTML<cr>
@@ -409,3 +410,22 @@ let g:vimwiki_list = [{'path': '$HOME/org/wiki',
       \ 'template_default': 'def_template',
       \ 'nested_syntaxes': {'python': 'python'},
       \ 'template_ext': '.html'}]
+
+
+
+
+
+
+
+
+
+
+
+
+function ToggleColors()
+    if (g:colors_name == "wal")
+        colorscheme gruvbox
+    else
+        colorscheme wal
+    endif
+endfunction
