@@ -33,18 +33,12 @@ set nowritebackup
 set undodir=~/.vim/undodir
 set undofile
 set incsearch
-"set termguicolors
 set scrolloff=8
 set signcolumn=number
 set cmdheight=2
 set updatetime=300
 set shortmess+=c
 set nostartofline
-
-
-
-
-
 """"""""""""""""""""""""
 "  Plugin 
 """"""""""""""""""""""""
@@ -137,6 +131,7 @@ nnoremap <leader>color <cmd>call ToggleColors()<cr>
 nnoremap <leader>help <cmd>Telescope help_tags<cr>
 nnoremap <leader>rr <cmd>source ~/.config/nvim/init.vim<cr><cmd>echo "Sourced vim.rc"<cr>
 nnoremap <leader>vimrc <cmd>vsplit<cr><cmd>:e ~/.config/nvim/init.vim<cr>
+nnoremap <bs> <cmd>wa<cr><cmd>echo "Saved!"<cr>
 "" Movement / Telescope
 nnoremap <C-P> <cmd>Telescope find_files<cr>
 nnoremap <C-T> <cmd>Telescope<cr>
@@ -308,4 +303,7 @@ if exists('g:vscode')
 	nnoremap <leader>n <Cmd>call VSCodeNotify('editor.action.marker.next')<CR>
 	nnoremap <leader>run <Cmd>call VSCodeNotify('fsharp.debugDefaultProject')<CR>
 endif
-
+""""""""""""""""""""""""
+"  Other    
+""""""""""""""""""""""""
+"" Dump
