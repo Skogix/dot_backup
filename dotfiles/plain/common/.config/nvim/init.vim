@@ -1,21 +1,3 @@
-"""""""""""""""""""""""
-"  Todo  
-""""""""""""""""""""""""
-" vim-snippets
-" ulti-snips
-" deoplete
-" lsp
-"   csharp
-"   haskell
-"
-" telescope
-" tmux sessions
-" tmux windows
-"
-" vim surround
-"
-" multi cursor
-" https://github.com/mg979/vim-visual-multi
 """"""""""""""""""""""""
 "  Init 
 """"""""""""""""""""""""
@@ -58,212 +40,125 @@ set cmdheight=2
 set updatetime=300
 set shortmess+=c
 set nostartofline
+
+
+
+
+
 """"""""""""""""""""""""
 "  Plugin 
 """"""""""""""""""""""""
 "" Start
 call plug#begin('~/.vim/plugged')
-"" VsCode
-Plug 'gruvbox-community/gruvbox'
 if exists('g:vscode')
-    Plug 'asvetliakov/vim-easymotion'
+  Plug 'asvetliakov/vim-easymotion'
 else
-"" NeoVim
-Plug 'powerman/vim-plugin-AnsiEsc'
-" telescope
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-telescope/telescope-fzy-native.nvim'
-Plug 'BurntSushi/ripgrep'
-Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'sudormrfbin/cheatsheet.nvim'
-Plug 'cljoly/telescope-repo.nvim'
-Plug 'camgraff/telescope-tmux.nvim'
-Plug 'norcalli/nvim-terminal.lua'
-Plug 'fhill2/telescope-ultisnips.nvim'
-Plug 'nvim-telescope/telescope-github.nvim'
-Plug 'tpope/vim-fugitive'
-Plug 'kyazdani42/nvim-web-devicons'
-" easymotion
-Plug 'easymotion/vim-easymotion'
-" lsp
-Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
-Plug 'fannheyward/telescope-coc.nvim'
-Plug 'sheerun/vim-polyglot'
-Plug 'lucasteles/fsi.vim'
-" markdown
-Plug 'ellisonleao/glow.nvim'
-Plug 'nvim-telescope/telescope-media-files.nvim'
-" snippets
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-"Plug 'autozimu/LanguageClient-neovim', {
-            "\ 'branch': 'next',
-            "\ 'do': 'bash install.sh',
-            "\ }
-Plug 'christoomey/vim-tmux-navigator'
-"Plug 'PhilT/vim-fsharp'
-"Plug 'ionide/Ionide-vim', {
-    "\ 'do': 'make fsautocomplete',
-    "\ }
-"Plug 'christoomey/vim-tmux-navigator'
-"Plug 'neovim/nvim-lspconfig'
-"Plug 'kabouzeid/nvim-lspinstall'
-
-"Plug 'OmniSharp/omnisharp-vim'
-"Plug 'deoplete-plugins/deoplete-lsp'
-" autocomplete
-"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-"Plug 'deoplete-plugins/deoplete-lsp'
-" comments
-Plug 'preservim/nerdcommenter', { 'commit': 'a5d1663' }
-" primeagen
-" Plug 'ThePrimeagen/vim-be-good'
-" rice pywal
-Plug 'dylanaraps/wal.vim'
-" vimwiki
-Plug 'vimwiki/vimwiki'
-Plug 'tools-life/taskwiki'
-Plug 'itchyny/calendar.vim'
+"" Plugins
+	" rice
+	Plug 'gruvbox-community/gruvbox'
+	Plug 'powerman/vim-plugin-AnsiEsc'
+	Plug 'nvim-telescope/telescope-media-files.nvim'
+	Plug 'kyazdani42/nvim-web-devicons'
+	Plug 'dylanaraps/wal.vim'
+	" telescope
+	Plug 'nvim-lua/popup.nvim'
+	Plug 'nvim-lua/plenary.nvim'
+	Plug 'nvim-telescope/telescope.nvim'
+	Plug 'nvim-treesitter/nvim-treesitter'
+	" fuzzy
+	Plug 'BurntSushi/ripgrep'
+	Plug 'nvim-telescope/telescope-fzy-native.nvim'
+	" snippets
+	Plug 'fhill2/telescope-ultisnips.nvim'
+	Plug 'SirVer/ultisnips'
+	Plug 'honza/vim-snippets'
+	" git
+	Plug 'nvim-telescope/telescope-github.nvim'
+	Plug 'cljoly/telescope-repo.nvim'
+	Plug 'tpope/vim-fugitive'
+	"help 
+	Plug 'sudormrfbin/cheatsheet.nvim'
+	" movement
+	Plug 'easymotion/vim-easymotion'
+	Plug 'camgraff/telescope-tmux.nvim'
+	Plug 'christoomey/vim-tmux-navigator'
+	" lsp
+	Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
+	Plug 'fannheyward/telescope-coc.nvim'
+	Plug 'sheerun/vim-polyglot'
+	Plug 'lucasteles/fsi.vim'
+	" misc
+	Plug 'norcalli/nvim-terminal.lua'
+	Plug 'preservim/nerdcommenter', { 'commit': 'a5d1663' }
+	" markdown
+	Plug 'ellisonleao/glow.nvim'
+	" readme
+	Plug 'vimwiki/vimwiki'
+	Plug 'tools-life/taskwiki'
+	Plug 'itchyny/calendar.vim'
 "" End
 endif
 call plug#end()
 """"""""""""""""""""""""
 "  Mappings
 """"""""""""""""""""""""
-"" VsCode
-if exists('g:vscode')
-	nnoremap ca <Cmd>call VSCodeNotify('keyboard-quickfix.openQuickFix')<CR>
-	nnoremap <leader>gt <Cmd>call VSCodeNotify('editor.action.goToTypeDefinition')<CR>
-	nnoremap <leader>rn <Cmd>call VSCodeNotify('editor.action.rename')<CR>
-	nnoremap sh <Cmd>call VSCodeNotify('editor.action.showHover')<CR>
-	nnoremap <leader>gr <Cmd>call VSCodeNotify('editor.action.referenceSearch.trigger')<CR>
-	nnoremap <leader>n <Cmd>call VSCodeNotify('editor.action.marker.next')<CR>
-	nnoremap <leader>run <Cmd>call VSCodeNotify('fsharp.debugDefaultProject')<CR>
-else
-"" NeoVim
-""" LSP
-" themes : dropdown, ivy, cursor
-    nmap <silent> <leader>n <Plug>(coc-diagnostic-next)
-    nmap <silent> <leader><S-n> <Plug>(coc-diagnostic-prev)
-    nnoremap ca <Cmd>:Telescope coc code_actions theme=ivy<Cr>
-    nnoremap gt <Cmd>:Telescope coc type_definitions<Cr>
-    "vnoremap <leader>ca <Cmd>:Telescope coc code_line_actions<Cr>
-    nnoremap <leader>coc <Cmd>:Telescope coc commands<Cr>
-    nnoremap <leader>tele <Cmd>:Telescope commands<Cr>
-    nnoremap <leader>loc <Cmd>:Telescope coc locations<Cr>
-    nnoremap <leader>ref <Cmd>:Telescope coc references<Cr>
-    nnoremap <leader>refactor <Plug>(coc-refactor)<Cr>
-    nnoremap <leader>def <Cmd>:Telescope coc definitions<Cr>
-    nnoremap <leader>dec <Cmd>:Telescope coc declarations<Cr>
-    nnoremap <leader>imp <Cmd>:Telescope coc implementations<Cr>
-    nnoremap <leader>dia <Cmd>:Telescope coc diagnostics<Cr>
-    nnoremap <leader>sym <Cmd>:Telescope coc document_symbols<Cr>
-    nnoremap <leader>wsym <Cmd>:Telescope coc workspace_symbols<Cr>
-    nnoremap <leader>wnn <Cmd>:Telescope coc workspace_diagnostics<Cr>
-    nnoremap <silent>sh :call <SID>show_documentation()<Cr>
-	  nnoremap <leader>+ <Cmd>:Telescope ultisnips<Cr>
-    nmap <leader>rn <Cmd>:CocCommand document.renameCurrentWord<Cr>
-	"nmap <leader>rn <Plug>(coc-rename)
-    map <leader>format  <Plug>(coc-format-selected)
-    map <leader>format  <Plug>(coc-format-selected)
-    xmap ca  <Plug>(coc-codeaction-selected)
-    nmap <leader>ca  <Plug>(coc-codeaction-selected)
-    nmap <leader>ca  <Plug>(coc-fix-current)
-    nmap <silent> <C-s> <Plug>(coc-range-select)
-    xmap <silent> <C-s> <Plug>(coc-range-select)
-
-    nnoremap <silent><leader><A-Return> <cmd>FsiEvalBuffer<cr>
-    
-    command! -nargs=? Fold :call     CocAction('fold', <f-args>)
-
-    autocmd Filetype fsharp setlocal foldmethod=indent
-
-    autocmd CursorHold * silent call CocActionAsync('highlight')
-    
-    "nnoremap sh <cmd>lua vim.lsp.buf.hover()<cr>
-    "nnoremap rn <cmd>lua vim.lsp.buf.rename()<cr>
-    "nnoremap gt <cmd>Telescope lsp_definitions<cr>
-    "nnoremap gr <cmd>Telescope lsp_references<cr>
-    "nnoremap <leader>ca <cmd>Telescope lsp_code_actions<cr>
-    "nnoremap ca <cmd>lua vim.lsp.buf.code_action()<cr>
-    "nnoremap <leader>n <cmd>lua vim.lsp.diagnostic.goto_next()<cr>
-    "nnoremap <leader>sym <cmd>Telescope lsp_document_symbols<cr>
-    "nnoremap <leader>format <cmd>lua vim.lsp.buf.formatting()<cr>
-""" Basics
-	nmap <silent> <C-i> <Plug>(coc-cursors-position)
-	"nmap <silent> <C-d> <Plug>(coc-cursors-word)
-	xmap <silent> <C-i> <Plug>(coc-cursors-range)
-	  nnoremap <leader>color <cmd>call ToggleColors()<cr>
-  nmap <leader>x  <Plug>(coc-cursors-operator)
-" use normal command like `<leader>xi(`
-  "xnoremap <leader>update <cmd>VimWikiAll2HTML<cr>
-""" Navigation
-    nnoremap <C-P> <cmd>Telescope find_files<cr>
-    nnoremap <C-T> <cmd>Telescope<cr>
-    nnoremap <C-T>t <cmd>Telescope find_files theme=dropdown<cr>
-    nnoremap <C-N> <cmd>Telescope file_browser<cr>
-    nnoremap <C-S-P> <cmd>Telescope git_files<cr>
-	  nnoremap <C-T>repo <cmd>Telescope repo list<cr>
-    nnoremap <leader>p <cmd>Telescope live_grep<cr>
-    nnoremap <leader>help <cmd>Telescope help_tags<cr>
-    nnoremap <leader>rr <cmd>source ~/.config/nvim/init.vim<cr><cmd>echo "Sourced vim.rc"<cr>
-    nnoremap <leader>vimrc <cmd>vsplit<cr><cmd>:e ~/.config/nvim/init.vim<cr>
-    nnoremap <c-j> <c-w>j
-    nnoremap <c-k> <c-w>k
-    nnoremap <c-h> <c-w>h
-    nnoremap <c-l> <c-w>l
-    "nnoremap zh zm
-    "nnoremap zl zR
-""" NerdCommenter
-    let g:NERDCreateDefaultMappings = 0
-    let g:NERDCompactSexyComs = 1
-    let g:NERDTrimTrailingWhitespace = 1
-    let g:NERDAltDelims_fsharp = 1
-
-    nnoremap <leader>/ :call NERDComment(0,'toggle')<CR>
-    vnoremap <leader>/ :call NERDComment(0,'toggle')<CR>
-endif
-nnoremap <leader>xx <Plug>(lcn-hover)
-nmap <F5> <Plug>(lcn-menu)
-
+"" LSP
+nnoremap <leader>coc <Cmd>:Telescope coc commands<Cr>
+nnoremap <leader>tele <Cmd>:Telescope commands<Cr>
+nnoremap <leader>loc <Cmd>:Telescope coc locations<Cr>
+nnoremap <leader>ref <Cmd>:Telescope coc references<Cr>
+nnoremap <leader>refactor <Plug>(coc-refactor)<Cr>
+nnoremap <leader>def <Cmd>:Telescope coc definitions<Cr>
+nnoremap <leader>dec <Cmd>:Telescope coc declarations<Cr>
+nnoremap <leader>imp <Cmd>:Telescope coc implementations<Cr>
+nnoremap <leader>dia <Cmd>:Telescope coc diagnostics<Cr>
+nnoremap <leader>sym <Cmd>:Telescope coc document_symbols<Cr>
+nnoremap <leader>wsym <Cmd>:Telescope coc workspace_symbols<Cr>
+nnoremap <leader>wnn <Cmd>:Telescope coc workspace_diagnostics<Cr>
+nnoremap <silent>sh :call <SID>show_documentation()<Cr>
+nnoremap <leader>+ <Cmd>:Telescope ultisnips<Cr>
+nmap <leader>rn <Cmd>:CocCommand document.renameCurrentWord<Cr>
+map <leader>format  <Plug>(coc-format-selected)
+xmap ca  <Plug>(coc-codeaction-selected)
+nmap <leader>ca  <Plug>(coc-codeaction-selected)
+nmap <leader>ca  <Plug>(coc-fix-current)
+nmap <silent> <C-s> <Plug>(coc-range-select)
+xmap <silent> <C-s> <Plug>(coc-range-select)
+nnoremap <silent><leader><A-Return> <cmd>FsiEvalBuffer<cr>
+"" Multi-Cursor
+nmap <silent> <C-i> <Plug>(coc-cursors-position)
+xmap <silent> <C-i> <Plug>(coc-cursors-range)
+nmap <leader>x  <Plug>(coc-cursors-operator)
+"" Comments
+nnoremap <leader>/ :call NERDComment(0,'toggle')<CR>
+vnoremap <leader>/ :call NERDComment(0,'toggle')<CR>
+"" Rice, Vim
+nnoremap <leader>color <cmd>call ToggleColors()<cr>
+nnoremap <leader>help <cmd>Telescope help_tags<cr>
+nnoremap <leader>rr <cmd>source ~/.config/nvim/init.vim<cr><cmd>echo "Sourced vim.rc"<cr>
+nnoremap <leader>vimrc <cmd>vsplit<cr><cmd>:e ~/.config/nvim/init.vim<cr>
+"" Movement / Telescope
+nnoremap <C-P> <cmd>Telescope find_files<cr>
+nnoremap <C-T> <cmd>Telescope<cr>
+nnoremap <C-T>t <cmd>Telescope find_files theme=dropdown<cr>
+nnoremap <C-N> <cmd>Telescope file_browser<cr>
+nnoremap <C-S-P> <cmd>Telescope git_files<cr>
+nnoremap <C-T>repo <cmd>Telescope repo list<cr>
+nnoremap <leader>p <cmd>Telescope live_grep<cr>
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+nmap <S-h> <cmd>bprev<cr>
+nmap <S-l> <cmd>bnext<cr>
 """"""""""""""""""""""""
-"  Fsharp 
+"  AutoCmd 
 """"""""""""""""""""""""
+"" Fsharp
 autocmd BufNewFile,BufRead *.fs,*.fsi,*.fsx set filetype=fsharp
 autocmd BufNewFile,BufRead *.fsproj         set filetype=fsharp_project
 """"""""""""""""""""""""
-"  Backup               
-""""""""""""""""""""""""
-let g:deoplete#enable_at_startup = 1
-
-"let g:fsharp#fsautocomplete_command =[ 'dotnet', 'fsautocomplete','--background-service-enabled']
-"let g:LanguageClient_serverCommands = {
-"    \ 'fsharp': ['dotnet', 'fsautocomplete','--background-service-enabled']
-"    \ }
-"let g:fsharp#backend = "languageclient-neovim"
-" let g:fsharp#linter = 1
-" let g:fsharp#UnusedDeclarationsAnalyzer = 0
-" let g:fsharp#UnusedOpensAnalyzer = 0
-" let g:fsharp#ExternalAutocomplete = 0
-" let fsharp#enable_reference_code_lens = 0
-"lua << EOF
-"require'lspconfig'.omnisharp.setup{
-"    cmd = { "/home/skogix/.cache/omnisharp-vim/omnisharp-roslyn/run", "--languageserver" , "--hostPID", tostring(pid) };
-"}
-"require'lspconfig'.fsautocomplete.setup{}
-"require'lspinstall'.setup() -- important
-"EOF
-" backup
-
-"let mapleader = "\<space>"
-"" Toggle folds
-"nnoremap <silent> <leader><Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
-"vnoremap <leader><space> zf
-
-""""""""""""""""""""""""
-"  Functions
+"  Functions 
 """"""""""""""""""""""""
 "" Autofolding .vimrc
 " see http://vimcasts.org/episodes/writing-a-custom-fold-expression/
@@ -284,7 +179,6 @@ function! VimFolds(lnum)
   endif
   if !s:two_following_lines
       return '='
-    endif
   else
     if (match(s:thisline, '^"""""') >= 0) &&
        \ (match(s:line_1_after, '^"  ') >= 0) &&
@@ -323,7 +217,7 @@ augroup fold_vimrc
                    \ setlocal foldtext=VimFoldText() |
      "              \ set foldcolumn=2 foldminlines=2
 augroup END
-"" coc show documentation
+"" Coc show documentation
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
@@ -333,13 +227,7 @@ function! s:show_documentation()
     execute '!' . &keywordprg . " " . expand('<cword>')
   endif
 endfunction
-""""""""""""""""""""""""
-"  Other 
-""""""""""""""""""""""""
-colorscheme wal
-""""""""""""""""""""""""
-"  Coc 
-""""""""""""""""""""""""
+"" Coc
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
@@ -356,9 +244,6 @@ else
 endif
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-""""""""""""""""""""""""
-"  Lua  
-""""""""""""""""""""""""
 "" Require
 lua << EOF
 require('telescope').load_extension('coc')
@@ -368,14 +253,6 @@ require'terminal'.setup()
 require('telescope').load_extension('gh')
 require'nvim-web-devicons'.get_icons()
 EOF
-""""""""""""""""""""""""
-"  Misc   
-""""""""""""""""""""""""
-"" TODO
-set foldmethod=marker
-
-let g:taskwiki_disable_concealcursor="yes"
-let g:vimwiki_folding = 'list'
 "" VimWiki
 function! VimwikiFindIncompleteTasks()
   lvimgrep /- \[ \]/ %:p
@@ -386,22 +263,21 @@ function! VimwikiFindAllIncompleteTasks()
   VimwikiSearch /- \[ \]/
   lopen
 endfunction
+"" Rice colors
+function ToggleColors()
+    if (g:colors_name == "wal")
+        colorscheme gruvbox
+    else
+        colorscheme wal
+    endif
+endfunction
 
-nmap <Leader>wa :call VimwikiFindAllIncompleteTasks()<CR>
-nmap <Leader>wx :call VimwikiFindIncompleteTasks()<CR>
-nmap <S-h> <cmd>bprev<cr>
-nmap <S-l> <cmd>bnext<cr>
-
-
-" add the pre tag for inserting code snippets
-"let wiki = {}
-"let wiki.path = '$HOME/org/wiki'
-"let wiki.path_html = '$HOME/skogix.github.io'
-"let wiki.template_path = '$HOME/org/wiki/templates'
-"let wiki.template_default = '$HOME/def_template'
-"let wiki.template_ext = '.html'
-"let wiki.nested_syntaxes = {'python': 'python'}
-"let g:vimwiki_list = [wiki]
+""""""""""""""""""""""""
+"  Settings   
+""""""""""""""""""""""""
+"" Readme
+let g:taskwiki_disable_concealcursor="yes"
+let g:vimwiki_folding = 'list'
 let g:vimwiki_valid_html_tags = 'b,i,s,u,sub,sup,kbd,br,hr, pre, script'
 let g:fsharp#fsi_focus_on_send = 0 " 0 to not to focus.
 let g:vimwiki_list = [{'path': '$HOME/org/wiki',
@@ -410,22 +286,26 @@ let g:vimwiki_list = [{'path': '$HOME/org/wiki',
       \ 'template_default': 'def_template',
       \ 'nested_syntaxes': {'python': 'python'},
       \ 'template_ext': '.html'}]
+"" Rice
+colorscheme wal
+"" NerdComments
+let g:NERDCreateDefaultMappings = 0
+let g:NERDCompactSexyComs = 1
+let g:NERDTrimTrailingWhitespace = 1
+let g:NERDAltDelims_fsharp = 1
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+autocmd Filetype fsharp setlocal foldmethod=indent
+autocmd CursorHold * silent call CocActionAsync('highlight')
+let g:deoplete#enable_at_startup = 1
+set foldmethod=marker
+"" VsCode
+if exists('g:vscode')
+	nnoremap ca <Cmd>call VSCodeNotify('keyboard-quickfix.openQuickFix')<CR>
+	nnoremap <leader>gt <Cmd>call VSCodeNotify('editor.action.goToTypeDefinition')<CR>
+	nnoremap <leader>rn <Cmd>call VSCodeNotify('editor.action.rename')<CR>
+	nnoremap sh <Cmd>call VSCodeNotify('editor.action.showHover')<CR>
+	nnoremap <leader>gr <Cmd>call VSCodeNotify('editor.action.referenceSearch.trigger')<CR>
+	nnoremap <leader>n <Cmd>call VSCodeNotify('editor.action.marker.next')<CR>
+	nnoremap <leader>run <Cmd>call VSCodeNotify('fsharp.debugDefaultProject')<CR>
+endif
 
-
-
-
-
-
-
-
-
-
-
-
-function ToggleColors()
-    if (g:colors_name == "wal")
-        colorscheme gruvbox
-    else
-        colorscheme wal
-    endif
-endfunction
