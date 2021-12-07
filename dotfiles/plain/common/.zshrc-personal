@@ -72,6 +72,7 @@ alias connectwifi="nmcli device wifi connect pipis_5G_nya password 0704284665"
 
 
 
+alias killwine="wineserver -k"
 
 # random rice
 alias rice1="cmatrix -r -a"
