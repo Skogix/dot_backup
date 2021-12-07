@@ -48,48 +48,48 @@ if exists('g:vscode')
   Plug 'asvetliakov/vim-easymotion'
 else
 "" Plugins
-	" rice
-	Plug 'gruvbox-community/gruvbox'
-	Plug 'powerman/vim-plugin-AnsiEsc'
-	Plug 'nvim-telescope/telescope-media-files.nvim'
-	Plug 'kyazdani42/nvim-web-devicons'
-	Plug 'dylanaraps/wal.vim'
-	" telescope
-	Plug 'nvim-lua/popup.nvim'
-	Plug 'nvim-lua/plenary.nvim'
-	Plug 'nvim-telescope/telescope.nvim'
-	Plug 'nvim-treesitter/nvim-treesitter'
-	" fuzzy
-	Plug 'BurntSushi/ripgrep'
-	Plug 'nvim-telescope/telescope-fzy-native.nvim'
-	" snippets
-	Plug 'fhill2/telescope-ultisnips.nvim'
-	Plug 'SirVer/ultisnips'
-	Plug 'honza/vim-snippets'
-	" git
-	Plug 'nvim-telescope/telescope-github.nvim'
-	Plug 'cljoly/telescope-repo.nvim'
-	Plug 'tpope/vim-fugitive'
-	"help 
-	Plug 'sudormrfbin/cheatsheet.nvim'
-	" movement
-	Plug 'easymotion/vim-easymotion'
-	Plug 'camgraff/telescope-tmux.nvim'
-	Plug 'christoomey/vim-tmux-navigator'
-	" lsp
-	Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
-	Plug 'fannheyward/telescope-coc.nvim'
-	Plug 'sheerun/vim-polyglot'
-	Plug 'lucasteles/fsi.vim'
-	" misc
-	Plug 'norcalli/nvim-terminal.lua'
-	Plug 'preservim/nerdcommenter', { 'commit': 'a5d1663' }
-	" markdown
-	Plug 'ellisonleao/glow.nvim'
-	" readme
-	Plug 'vimwiki/vimwiki'
-	Plug 'tools-life/taskwiki'
-	Plug 'itchyny/calendar.vim'
+" rice
+Plug 'gruvbox-community/gruvbox'
+Plug 'powerman/vim-plugin-AnsiEsc'
+Plug 'nvim-telescope/telescope-media-files.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'dylanaraps/wal.vim'
+" telescope
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-treesitter/nvim-treesitter'
+" fuzzy
+Plug 'BurntSushi/ripgrep'
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
+" snippets
+Plug 'fhill2/telescope-ultisnips.nvim'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+" git
+Plug 'nvim-telescope/telescope-github.nvim'
+Plug 'cljoly/telescope-repo.nvim'
+Plug 'tpope/vim-fugitive'
+"help 
+Plug 'sudormrfbin/cheatsheet.nvim'
+" movement
+Plug 'easymotion/vim-easymotion'
+Plug 'camgraff/telescope-tmux.nvim'
+Plug 'christoomey/vim-tmux-navigator'
+" lsp
+Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
+Plug 'fannheyward/telescope-coc.nvim'
+Plug 'sheerun/vim-polyglot'
+Plug 'lucasteles/fsi.vim'
+" misc
+Plug 'norcalli/nvim-terminal.lua'
+Plug 'preservim/nerdcommenter', { 'commit': 'a5d1663' }
+" markdown
+Plug 'ellisonleao/glow.nvim'
+" readme
+Plug 'vimwiki/vimwiki'
+Plug 'tools-life/taskwiki'
+Plug 'itchyny/calendar.vim'
 "" End
 endif
 call plug#end()
