@@ -52,6 +52,7 @@ alias config="tmux attach -t config"
 #}}}
 #{{{ org
 alias readme="vim ~/org/wiki/index.wiki"
+alias rr="vim ~/org/wiki/index.wiki"
 #}}
 #{{{ programming
 #{{{ fsharp

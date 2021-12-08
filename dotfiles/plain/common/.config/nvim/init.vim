@@ -10,6 +10,7 @@ let g:python3_host_prog = '/usr/bin/python3'
 """"""""""""""""""""""""
 "  Sets
 """"""""""""""""""""""""
+set foldmethod=marker
 set encoding=utf-8
 set guicursor=
 set splitbelow
@@ -47,56 +48,69 @@ call plug#begin('~/.vim/plugged')
 if exists('g:vscode')
   Plug 'asvetliakov/vim-easymotion'
 else
-"" Plugins
-" rice
-Plug 'gruvbox-community/gruvbox'
-Plug 'powerman/vim-plugin-AnsiEsc'
-Plug 'nvim-telescope/telescope-media-files.nvim'
-Plug 'kyazdani42/nvim-web-devicons'
-Plug 'dylanaraps/wal.vim'
-" telescope
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-treesitter/nvim-treesitter'
-" fuzzy
-Plug 'BurntSushi/ripgrep'
-Plug 'nvim-telescope/telescope-fzy-native.nvim'
-" snippets
-Plug 'fhill2/telescope-ultisnips.nvim'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-" git
-Plug 'nvim-telescope/telescope-github.nvim'
-Plug 'cljoly/telescope-repo.nvim'
-Plug 'tpope/vim-fugitive'
-"help 
-Plug 'sudormrfbin/cheatsheet.nvim'
-" movement
-Plug 'easymotion/vim-easymotion'
-Plug 'camgraff/telescope-tmux.nvim'
-Plug 'christoomey/vim-tmux-navigator'
-" lsp
-Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
-Plug 'fannheyward/telescope-coc.nvim'
-Plug 'sheerun/vim-polyglot'
-Plug 'lucasteles/fsi.vim'
-" misc
-Plug 'norcalli/nvim-terminal.lua'
-Plug 'preservim/nerdcommenter', { 'commit': 'a5d1663' }
-" markdown
-Plug 'ellisonleao/glow.nvim'
-" readme
-Plug 'vimwiki/vimwiki'
-Plug 'tools-life/taskwiki'
-Plug 'itchyny/calendar.vim'
-"" End
+  "" Plugins
+  " rice
+  Plug 'gruvbox-community/gruvbox'
+  Plug 'powerman/vim-plugin-AnsiEsc'
+  Plug 'nvim-telescope/telescope-media-files.nvim'
+  Plug 'kyazdani42/nvim-web-devicons'
+  Plug 'dylanaraps/wal.vim'
+  " telescope
+  Plug 'nvim-lua/popup.nvim'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim'
+  Plug 'nvim-treesitter/nvim-treesitter'
+  " fuzzy
+  Plug 'BurntSushi/ripgrep'
+  Plug 'nvim-telescope/telescope-fzy-native.nvim'
+  " snippets
+  Plug 'fhill2/telescope-ultisnips.nvim'
+  Plug 'SirVer/ultisnips'
+  Plug 'honza/vim-snippets'
+  " git
+  Plug 'nvim-telescope/telescope-github.nvim'
+  Plug 'cljoly/telescope-repo.nvim'
+  Plug 'tpope/vim-fugitive'
+  "help 
+  Plug 'sudormrfbin/cheatsheet.nvim'
+  " movement
+  Plug 'easymotion/vim-easymotion'
+  Plug 'camgraff/telescope-tmux.nvim'
+  Plug 'christoomey/vim-tmux-navigator'
+  " lsp
+  Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
+  Plug 'fannheyward/telescope-coc.nvim'
+  Plug 'sheerun/vim-polyglot'
+  Plug 'lucasteles/fsi.vim'
+  " misc
+  Plug 'norcalli/nvim-terminal.lua'
+  Plug 'preservim/nerdcommenter', { 'commit': 'a5d1663' }
+  " markdown
+  Plug 'ellisonleao/glow.nvim'
+  " readme
+  Plug 'vimwiki/vimwiki'
+  Plug 'tools-life/taskwiki'
+  Plug 'itchyny/calendar.vim'
+  "" End
 endif
 call plug#end()
 """"""""""""""""""""""""
 "  Mappings
 """"""""""""""""""""""""
 "" LSP
+" used
+nmap <silent> <leader>n <Plug>(coc-diagnostic-next)
+nmap <silent> <leader><S-n> <Plug>(coc-diagnostic-prev)
+nnoremap ca <Cmd>:Telescope coc code_actions theme=cursor<Cr>
+nnoremap gt <Cmd>:Telescope coc type_definitions<Cr>
+nnoremap <silent>sh :call <SID>show_documentation()<Cr>
+nnoremap <leader>+ <Cmd>:Telescope ultisnips<Cr>
+nmap <leader>rn <Cmd>:CocCommand document.renameCurrentWord<Cr>
+xmap ca  <Plug>(coc-codeaction-selected)
+nmap <leader>ca  <Plug>(coc-codeaction-selected)
+nmap <leader>ca  <Plug>(coc-fix-current)
+nnoremap <silent><leader><A-Return> <cmd>FsiEvalBuffer<cr>
+" backup
 nnoremap <leader>coc <Cmd>:Telescope coc commands<Cr>
 nnoremap <leader>tele <Cmd>:Telescope commands<Cr>
 nnoremap <leader>loc <Cmd>:Telescope coc locations<Cr>
@@ -109,16 +123,9 @@ nnoremap <leader>dia <Cmd>:Telescope coc diagnostics<Cr>
 nnoremap <leader>sym <Cmd>:Telescope coc document_symbols<Cr>
 nnoremap <leader>wsym <Cmd>:Telescope coc workspace_symbols<Cr>
 nnoremap <leader>wnn <Cmd>:Telescope coc workspace_diagnostics<Cr>
-nnoremap <silent>sh :call <SID>show_documentation()<Cr>
-nnoremap <leader>+ <Cmd>:Telescope ultisnips<Cr>
-nmap <leader>rn <Cmd>:CocCommand document.renameCurrentWord<Cr>
 map <leader>format  <Plug>(coc-format-selected)
-xmap ca  <Plug>(coc-codeaction-selected)
-nmap <leader>ca  <Plug>(coc-codeaction-selected)
-nmap <leader>ca  <Plug>(coc-fix-current)
 nmap <silent> <C-s> <Plug>(coc-range-select)
 xmap <silent> <C-s> <Plug>(coc-range-select)
-nnoremap <silent><leader><A-Return> <cmd>FsiEvalBuffer<cr>
 "" Multi-Cursor
 nmap <silent> <C-i> <Plug>(coc-cursors-position)
 xmap <silent> <C-i> <Plug>(coc-cursors-range)
@@ -131,7 +138,7 @@ nnoremap <leader>color <cmd>call ToggleColors()<cr>
 nnoremap <leader>help <cmd>Telescope help_tags<cr>
 nnoremap <leader>rr <cmd>source ~/.config/nvim/init.vim<cr><cmd>echo "Sourced vim.rc"<cr>
 nnoremap <leader>vimrc <cmd>vsplit<cr><cmd>:e ~/.config/nvim/init.vim<cr>
-nnoremap <bs> <cmd>wa<cr><cmd>echo "Saved!"<cr>
+nnoremap <leader><bs> <cmd>wqa<cr>
 "" Movement / Telescope
 nnoremap <C-P> <cmd>Telescope find_files<cr>
 nnoremap <C-T> <cmd>Telescope<cr>
@@ -149,9 +156,6 @@ nmap <S-l> <cmd>bnext<cr>
 """"""""""""""""""""""""
 "  AutoCmd 
 """"""""""""""""""""""""
-"" Fsharp
-autocmd BufNewFile,BufRead *.fs,*.fsi,*.fsx set filetype=fsharp
-autocmd BufNewFile,BufRead *.fsproj         set filetype=fsharp_project
 """"""""""""""""""""""""
 "  Functions 
 """"""""""""""""""""""""
@@ -222,7 +226,7 @@ function! s:show_documentation()
     execute '!' . &keywordprg . " " . expand('<cword>')
   endif
 endfunction
-"" Coc
+"" Coc general
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
@@ -267,9 +271,14 @@ function ToggleColors()
     endif
 endfunction
 
+"" Fsharp
+autocmd BufNewFile,BufRead *.fs,*.fsi,*.fsx set filetype=fsharp
+autocmd BufNewFile,BufRead *.fsproj         set filetype=fsharp_project
 """"""""""""""""""""""""
 "  Settings   
 """"""""""""""""""""""""
+"" General
+let g:deoplete#enable_at_startup = 1
 "" Readme
 let g:taskwiki_disable_concealcursor="yes"
 let g:vimwiki_folding = 'list'
@@ -291,8 +300,6 @@ let g:NERDAltDelims_fsharp = 1
 command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 autocmd Filetype fsharp setlocal foldmethod=indent
 autocmd CursorHold * silent call CocActionAsync('highlight')
-let g:deoplete#enable_at_startup = 1
-set foldmethod=marker
 "" VsCode
 if exists('g:vscode')
 	nnoremap ca <Cmd>call VSCodeNotify('keyboard-quickfix.openQuickFix')<CR>
