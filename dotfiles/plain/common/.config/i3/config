@@ -51,6 +51,8 @@ set_from_resource $color7 i3wm.color7 #f0f0f0
 set_from_resource $color8 i3wm.color8 #f0f0f0
 
 ################# Bindings
+# opacity
+#bindsym $mod+shift+u exec --no-startup-id picom-trans -c 100
 # basics 
 bindsym $mod+Return exec --no-startup-id urxvt;focus
 bindsym $mod+shift+Return exec --no-startup-id exo-open --launch webbrowser;focus
@@ -89,11 +91,11 @@ bindsym $mod+shift+s move scratchpad
 bindsym $mod+s scratchpad show
 # rice
 bindsym $mod+b bar mode toggle
-bindsym control+mod1+o exec --no-startup-id ~/.config/i3/scripts/picom-toggle.sh
+bindsym $mod+shift+BackSpace exec --no-startup-id ~/.config/i3/scripts/picom-toggle.sh
 bindsym mod1+n exec --no-startup-id variety -n && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)& #next
 bindsym mod1+p exec --no-startup-id variety -p && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)& #previous
 bindsym mod1+t exec --no-startup-id variety -t && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)& #trash
-bindsym mod1+u exec --no-startup-id wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt) #update
+#bindsym mod1+u exec --no-startup-id wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt) #update
 
 ################# Exec
 # Keyboard

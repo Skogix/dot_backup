@@ -48,7 +48,7 @@ call plug#begin('~/.vim/plugged')
 if exists('g:vscode')
   Plug 'asvetliakov/vim-easymotion'
 else
-  "" Plugins
+"" Plugins
   " rice
   Plug 'gruvbox-community/gruvbox'
   Plug 'powerman/vim-plugin-AnsiEsc'
@@ -77,6 +77,7 @@ else
   Plug 'easymotion/vim-easymotion'
   Plug 'camgraff/telescope-tmux.nvim'
   Plug 'christoomey/vim-tmux-navigator'
+  Plug 'michaeljsmith/vim-indent-object'
   " lsp
   Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
   Plug 'fannheyward/telescope-coc.nvim'
@@ -91,7 +92,7 @@ else
   Plug 'vimwiki/vimwiki'
   Plug 'tools-life/taskwiki'
   Plug 'itchyny/calendar.vim'
-  "" End
+"" End
 endif
 call plug#end()
 """"""""""""""""""""""""
