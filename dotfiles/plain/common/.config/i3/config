@@ -93,7 +93,7 @@ bindsym $mod+s scratchpad show
 bindsym $mod+b bar mode toggle
 bindsym $mod+shift+BackSpace exec --no-startup-id ~/.config/i3/scripts/picom-toggle.sh
 bindsym mod1+n exec --no-startup-id variety -n && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)& #next
-bindsym mod1+p exec --no-startup-id variety -p && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)& #previous
+#bindsym mod1+p exec --no-startup-id variety -p && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)& #previous
 bindsym mod1+t exec --no-startup-id variety -t && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)& #trash
 #bindsym mod1+u exec --no-startup-id wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt) #update
 
