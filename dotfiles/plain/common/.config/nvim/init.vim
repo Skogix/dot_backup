@@ -45,11 +45,23 @@ set nostartofline
 """"""""""""""""""""""""
 "" Start
 call plug#begin('~/.vim/plugged')
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
 if exists('g:vscode')
   Plug 'asvetliakov/vim-easymotion'
 else
+"Plug 'autozimu/LanguageClient-neovim', {
+    "\ 'branch': 'next',
+    "\ 'do': 'bash install.sh',
+    "\ }
+"Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'make release'}
+"Plug 'ionide/Ionide-vim', {
+    "\ 'do':  'make fsautocomplete',
+    "\}
+
 "" Plugins
   " rice
+  Plug 'Skogix/coc-fsharp'
   Plug 'gruvbox-community/gruvbox'
   Plug 'powerman/vim-plugin-AnsiEsc'
   Plug 'nvim-telescope/telescope-media-files.nvim'
@@ -82,7 +94,7 @@ else
   Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
   Plug 'fannheyward/telescope-coc.nvim'
   Plug 'sheerun/vim-polyglot'
-  Plug 'lucasteles/fsi.vim'
+  "Plug 'lucasteles/fsi.vim'
   " misc
   Plug 'norcalli/nvim-terminal.lua'
   Plug 'preservim/nerdcommenter', { 'commit': 'a5d1663' }
@@ -91,6 +103,7 @@ else
   " readme
   Plug 'vimwiki/vimwiki'
   Plug 'tools-life/taskwiki'
+  Plug 'yatli/fsharp-language-server'
   Plug 'itchyny/calendar.vim'
 "" End
 endif
@@ -315,3 +328,8 @@ endif
 "  Other    
 """"""""""""""""""""""""
 "" Dump
+"let g:coc_global_extensions = [
+"\ 'coc-fsharp',
+"\ ]
+
+
