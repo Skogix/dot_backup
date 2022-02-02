@@ -61,7 +61,7 @@ else
 
 "" Plugins
   " rice
-  Plug 'Skogix/coc-fsharp'
+  "Plug 'Skogix/coc-fsharp', {'do': 'yarn install --frozen-lockfile'}
   Plug 'gruvbox-community/gruvbox'
   Plug 'powerman/vim-plugin-AnsiEsc'
   Plug 'nvim-telescope/telescope-media-files.nvim'
@@ -103,7 +103,7 @@ else
   " readme
   Plug 'vimwiki/vimwiki'
   Plug 'tools-life/taskwiki'
-  Plug 'yatli/fsharp-language-server'
+  "Plug 'yatli/fsharp-language-server'
   Plug 'itchyny/calendar.vim'
 "" End
 endif
