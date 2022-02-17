@@ -61,7 +61,6 @@ else
 
 "" Plugins
   " rice
-  "Plug 'Skogix/coc-fsharp', {'do': 'yarn install --frozen-lockfile'}
   Plug 'gruvbox-community/gruvbox'
   Plug 'powerman/vim-plugin-AnsiEsc'
   Plug 'nvim-telescope/telescope-media-files.nvim'
