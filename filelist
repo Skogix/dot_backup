@@ -5,7 +5,37 @@
 .tmux.conf
 .Xresources
 
-.config/nvim/init.vim
+.config/nvim/init.lua
+.config/nvim/lua/user/alpha.lua
+.config/nvim/lua/user/autocommands.lua
+.config/nvim/lua/user/autopairs.lua
+.config/nvim/lua/user/bufferline.lua
+.config/nvim/lua/user/cmp.lua
+.config/nvim/lua/user/colorscheme.lua
+.config/nvim/lua/user/comment.lua
+.config/nvim/lua/user/dap.lua
+.config/nvim/lua/user/gitsigns.lua
+.config/nvim/lua/user/hop.lua
+.config/nvim/lua/user/illuminate.lua
+.config/nvim/lua/user/impatient.lua
+.config/nvim/lua/user/indentline.lua
+.config/nvim/lua/user/lsp/handlers.lua
+.config/nvim/lua/user/lsp/init.lua
+.config/nvim/lua/user/lsp/mason.lua
+.config/nvim/lua/user/lsp/null-ls.lua
+.config/nvim/lua/user/lsp/settings.lua
+.config/nvim/lua/user/lualine.lua
+.config/nvim/lua/user/mappings.lua
+.config/nvim/lua/user/nvim-tree.lua
+.config/nvim/lua/user/options.lua
+.config/nvim/lua/user/plugins.lua
+.config/nvim/lua/user/project.lua
+.config/nvim/lua/user/telekasten.lua
+.config/nvim/lua/user/telescope-file-browser.lua
+.config/nvim/lua/user/telescope.lua
+.config/nvim/lua/user/toggleterm.lua
+.config/nvim/lua/user/treesitter.lua
+.config/nvim/lua/user/whichkey.lua
 
 .config/alacritty/alacritty.yml
 
