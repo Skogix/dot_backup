@@ -28,6 +28,3 @@ install vimium lastpass ublock-origin
 ### 004-terminal
 
 - logout for zsh
-
-test för git
-hteuoans
