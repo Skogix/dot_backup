@@ -29,3 +29,5 @@ install vimium lastpass ublock-origin
 
 - logout for zsh
 
+test för git
+hteuoans

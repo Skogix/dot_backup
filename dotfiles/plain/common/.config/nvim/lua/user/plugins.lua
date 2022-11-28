@@ -141,6 +141,12 @@ return packer.startup(function(use)
 
 	use({ "ionide/Ionide-vim" })
 	use({ "kosayoda/nvim-lightbulb" })
+    -- Tpope
+  use({"tpope/vim-speeddating"}) -- CTRL-A for things like dates and time
+  use({"tpope/vim-surround"}) -- 
+  use({"tpope/vim-repeat"}) -- . repeats with plugins
+  use({"tpope/vim-fugitive"}) -- . repeats with plugins
+    -- TrePrimagen
   use({"ThePrimeagen/vim-be-good"})
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
