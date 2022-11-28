@@ -19,7 +19,6 @@ vim.g.mapleader = " "
 --   visual_block_mode = "x",
 --   term_mode = "t",
 --   command_mode = "c",
-
 -- Normal --
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
@@ -64,7 +63,7 @@ keymap("v", ">", ">gv", opts)
 keymap("n", "<leader>e", "<cmd>Telescope file_browser<cr>", opts)
 
 -- Telescope
-keymap("n", "<leader>tt", ":Telescope find_files<CR>", opts)
+keymap("n", "<leader>tt", ":Telescope find_files hidden=true<CR>", opts)
 keymap("n", "<leader>ts", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>tp", ":Telescope projects<CR>", opts)
 keymap("n", "<leader>tb", ":Telescope buffers<CR>", opts)
@@ -98,27 +97,44 @@ keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 -- keymap("n", "<leader>w<leader>", "<cmd>lua require'telekasten'.goto_today()<cr>", opts)
 -- keymap("n", "<leader>w<leader>w", "<cmd>lua require'telekasten'.goto_thisweek()<cr>", opts)
 -- keymap("n", "<leader><cr>", "<cmd>lua require'telekasten'.follow_link()<cr>", opts)
-keymap("n", ",", ":Telescope find_files<cr>")
+keymap("n", ",", "<cmd>cd ~/dot/dotfiles/plain/common/<cr><cmd>e ~/dot/dotfiles/plain/common/.config/nvim/init.lua<cr><cmd>Telescope find_files hidden=true<cr>")
 keymap("n", ";", ":")
 keymap("n", "todo", "<cmd>TW<cr>")
 keymap("n", "-", "<cmd>HopWordMW<cr>")
 keymap("n", "f", "<cmd>HopChar1CurrentLine<cr>")
+keymap("n", "sh", "<cmd>lua vim.lsp.buf.hover()<cr>")
+keymap("n", "<leader>zen", "<cmd>ZenMode<cr>")
 
 keymap("n", "<leader>w", "<cmd>lua require'telekasten'.panel()<cr>", opts)
 wk.register({
-	["t"] = { name = "Telescope" },
+	-- ["t"] = { name = "Telescope" },
 	["w"] = {
-		"<cmd>lua require'telekasten'.panel()<cr>","Wiki",
-    ["c"] = { "<cmd>CalendarT<cr>", "Calendar" },
-    ["s"] = { "<cmd>lua require'telekasten'.find_notes()<cr>", "Find notes" },
-    ["/"] = { "<cmd>lua require'telekasten'.search_notes()<cr>", "Search notes" },
-    ["n"] = { "<cmd>lua require'telekasten'.new_note()<cr>", "New note" },
-    ["t"] = { "<cmd>lua require'telekasten'.show_tags()<cr>", "Show tags" },
-    ["i"] = { "<cmd>lua require'telekasten'.insert_link()<cr>", "Insert link" },
-    ["r"] = { "<cmd>lua require'telekasten'.rename_note()<cr>", "Rename note" },
-    ["w"] = { "<cmd>lua require'telekasten'.goto_today()<cr>", "Todays diary" },
-    ["<C-leader>"] = { ":lua require'telekasten'.toggle_todo({v=true})<cr>", "Toggle todo" },
+		"<cmd>lua require'telekasten'.panel()<cr>",
+		"Wiki",
+		["c"] = { "<cmd>CalendarT<cr>", "Calendar" },
+		["s"] = { "<cmd>lua require'telekasten'.find_notes()<cr>", "Find notes" },
+		["/"] = { "<cmd>lua require'telekasten'.search_notes()<cr>", "Search notes" },
+		["n"] = { "<cmd>lua require'telekasten'.new_note()<cr>", "New note" },
+		["t"] = { "<cmd>lua require'telekasten'.show_tags()<cr>", "Show tags" },
+		["i"] = { "<cmd>lua require'telekasten'.insert_link()<cr>", "Insert link" },
+		["r"] = { "<cmd>lua require'telekasten'.rename_note()<cr>", "Rename note" },
+		["w"] = { "<cmd>lua require'telekasten'.goto_today()<cr>", "Todays diary" },
+		["<C-leader>"] = { ":lua require'telekasten'.toggle_todo({v=true})<cr>", "Toggle todo" },
 	},
-  ["u"] = { "<cmd>UndotreeToggle<cr><cmd>UndotreeFocus<cr>", "Undotree"  }
+	["u"] = { "<cmd>UndotreeToggle<cr><cmd>UndotreeFocus<cr>", "Undotree" },
+	["p"] = { "<cmd>Telescope projects<cr>", "Undotree" },
+	["t"] = {
+		name = "+Trouble",
+		r = { "<cmd>Trouble lsp_references<cr>", "References" },
+		f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
+		d = { "<cmd>Trouble document_diagnostics<cr>", "Diagnostics" },
+		q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
+		l = { "<cmd>Trouble loclist<cr>", "LocationList" },
+		w = { "<cmd>Trouble workspace_diagnostics<cr>", "Wordspace Diagnostics" },
+	},
 }, { prefix = "<leader>" })
 
+
+
+
+-- vim.keymap.set("n", "<leader>caL", "<Nop>", opts)

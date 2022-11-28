@@ -135,6 +135,13 @@ return packer.startup(function(use)
 	use({ "soywod/kronos.vim" })
 	use({ "phaazon/hop.nvim" })
 	use({ "francoiscabrol/ranger.vim" })
+
+	use({ "folke/zen-mode.nvim" })
+	use({ "folke/trouble.nvim" })
+
+	use({ "ionide/Ionide-vim" })
+	use({ "kosayoda/nvim-lightbulb" })
+  use({"ThePrimeagen/vim-be-good"})
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then

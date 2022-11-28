@@ -1,7 +1,10 @@
+-- { 'tpope/vim-surround' },
+-- vim.opt.foldmethod = "expr"
+-- vim.opt.foldexpr = "nvim_treesitter#foldexpr()" --}}}
 require "user.impatient"
 require "user.options"
-require "user.mappings"
 require "user.plugins"
+require "user.mappings"
 require "user.autocommands"
 require "user.colorscheme"
 require "user.cmp"
@@ -24,4 +27,3 @@ require "user.telekasten"
 require "user.whichkey"
 require "user.hop"
 require "user.telescope-file-browser"
-
