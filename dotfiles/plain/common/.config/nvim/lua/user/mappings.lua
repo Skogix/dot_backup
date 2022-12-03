@@ -59,8 +59,8 @@ keymap("v", ">", ">gv", opts)
 -- Plugins --
 
 -- NvimTree
--- keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
-keymap("n", "<leader>e", "<cmd>Telescope file_browser<cr>", opts)
+keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+-- keymap("n", "<leader>e", "<cmd>Telescope file_browser<cr>", opts)
 
 -- Telescope
 keymap("n", "<leader>tt", ":Telescope find_files hidden=true<CR>", opts)
@@ -97,7 +97,8 @@ keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 -- keymap("n", "<leader>w<leader>", "<cmd>lua require'telekasten'.goto_today()<cr>", opts)
 -- keymap("n", "<leader>w<leader>w", "<cmd>lua require'telekasten'.goto_thisweek()<cr>", opts)
 -- keymap("n", "<leader><cr>", "<cmd>lua require'telekasten'.follow_link()<cr>", opts)
-keymap("n", ",", "<cmd>cd ~/dot/dotfiles/plain/common/<cr><cmd>e ~/dot/dotfiles/plain/common/.config/nvim/init.lua<cr><cmd>Telescope find_files hidden=true<cr>")
+keymap("n", "<leader>,", "<cmd>cd ~/dot/dotfiles/plain/common/<cr><cmd>e ~/dot/dotfiles/plain/common/.config/nvim/init.lua<cr><cmd>Telescope find_files hidden=true<cr>")
+keymap("n", ",", "<cmd>Telescope find_files hidden=true<cr>")
 keymap("n", ";", ":")
 keymap("n", "todo", "<cmd>TW<cr>")
 keymap("n", "-", "<cmd>HopWordMW<cr>")
@@ -122,6 +123,7 @@ wk.register({
 		["<C-leader>"] = { ":lua require'telekasten'.toggle_todo({v=true})<cr>", "Toggle todo" },
 	},
 	["u"] = { "<cmd>UndotreeToggle<cr><cmd>UndotreeFocus<cr>", "Undotree" },
+	[";"] = { "<cmd>Alpha<cr>", "Alpha menu" },
 	["p"] = { "<cmd>Telescope projects<cr>", "Undotree" },
 	["t"] = {
 		name = "+Trouble",
