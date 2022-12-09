@@ -10,7 +10,7 @@ alias asdf="/usr/bin/setxkbmap se us_dvorak -option ; /usr/bin/setxkbmap se us_d
 alias asdfus="/usr/bin/setxkbmap us" 
 alias aoeu="/usr/bin/setxkbmap se"
 alias starre="/usr/bin/setxkbmap se -option lv3:ralt_alt"
-# /usr/bin/setxkbmap -option "caps:swapescape"
+/usr/bin/setxkbmap -option "caps:swapescape"
 #}}}
 #{{{ rc
 alias zshrc="nvim ~/.zshrc-personal"

@@ -25,7 +25,6 @@
 .config/nvim/lua/user/lsp/init.lua
 .config/nvim/lua/user/lsp/mason.lua
 .config/nvim/lua/user/lsp/null-ls.lua
-.config/nvim/lua/user/lsp/settings.lua
 .config/nvim/lua/user/lualine.lua
 .config/nvim/lua/user/mappings.lua
 .config/nvim/lua/user/nvim-tree.lua
@@ -40,6 +39,7 @@
 .config/nvim/lua/user/whichkey.lua
 
 .config/alacritty/alacritty.yml
+.config/kitty/kitty.conf
 
 .config/i3/config
 .config/i3/config-polybar
