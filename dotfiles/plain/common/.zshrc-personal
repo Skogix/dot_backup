@@ -78,3 +78,5 @@ alias killwine="wineserver -k"
 # random rice
 alias rice1="cmatrix -r -a"
 alias rice2="cava"
+alias win="cd /run/media/skogix/warez/"
+alias dwarffortress="wine \"/run/media/skogix/warez/games/Dwarf.Fortress/Dwarf Fortress.exe\""

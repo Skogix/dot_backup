@@ -3,6 +3,6 @@ if not status_ok then
   return
 end
 
-require "user.lsp.mason"
-require("user.lsp.handlers").setup()
-require "user.lsp.null-ls"
+require "skogix.lsp.mason"
+require("skogix.lsp.handlers").setup()
+require "skogix.lsp.null-ls"

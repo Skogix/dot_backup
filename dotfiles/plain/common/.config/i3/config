@@ -10,7 +10,7 @@
 # Tab = TAB key
 
 set $mod Mod4
-set $firstMonitor DP-0
+set $firstMonitor DP-4
 set $secondMonitor HDMI-0
 set $up j
 set $down k
@@ -18,9 +18,9 @@ set $left h
 set $right l 
 
 font pango:Noto Mono Sans 4
-#exec_always --no-startup-id ~/.config/polybar/launch.sh &
-#exec_always killall polybar
-#exec_always --no-startup-id polybar mainbar-i3
+# exec_always --no-startup-id ~/.config/polybar/launch.sh &
+exec_always killall polybar
+exec_always --no-startup-id polybar mainbar-i3
 
 ################# Settings
 for_window [urgent=latest] focus
@@ -84,7 +84,7 @@ bindsym $mod+r mode "resize"
 bindsym $mod+f fullscreen toggle
 #bindsym $mod+t layout tabbed
 bindsym $mod+t layout toggle tabbed splith splitv
-#bindsym $mod+control+2 layout stacking
+# bindsym $mod+control+2 layout stacking
 bindsym $mod+BackSpace layout toggle split tabbed
 # misc
 bindsym $mod+shift+s move scratchpad
@@ -92,9 +92,9 @@ bindsym $mod+s scratchpad show
 # rice
 bindsym $mod+b bar mode toggle
 bindsym $mod+shift+BackSpace exec --no-startup-id ~/.config/i3/scripts/picom-toggle.sh
-bindsym mod1+n exec --no-startup-id variety -n && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)& #next
+bindsym $mod+shift+n exec --no-startup-id variety -n && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)& #next
 #bindsym mod1+p exec --no-startup-id variety -p && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)& #previous
-bindsym mod1+t exec --no-startup-id variety -t && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)& #trash
+# bindsym mod1+shift+t exec --no-startup-id variety -t && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)& #trash
 #bindsym mod1+u exec --no-startup-id wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt) #update
 
 ################# Exec
@@ -105,13 +105,23 @@ exec_always setxkbmap se us_dvorak
 exec_always xrandr --output $firstMonitor --mode 1920x1080 --rate 144 --primary
 exec_always xrandr --output $secondMonitor --mode 1024x768 --rate 60 --right-of $firstMonitor
 # Background apps
-exec_alway --no-startup-id unclutter --timeout 1 &
-exec --no-startup-id redshift -l 61.691980:13.136770
-exec --no-startup-id volumeicon
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-exec --no-startup-id pamac-tray
-exec --no-startup-id nm-applet
-exec --no-startup-id variety
+exec_always --no-startup-id killall unclutter
+exec_always --no-startup-id killall picom
+exec_always --no-startup-id killall redshift
+exec_always --no-startup-id killall volumeicon
+exec_always --no-startup-id killall /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec_always --no-startup-id killall pamac-tray
+exec_always --no-startup-id killall nm-applet
+exec_always --no-startup-id killall variety
+exec_always --no-startup-id killall numlockx
+exec_always --no-startup-id killall autotiling
+exec_always --no-startup-id unclutter --timeout 1 &
+exec_always --no-startup-id redshift -l 61.691980:13.136770
+exec_always --no-startup-id volumeicon
+exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+exec_always --no-startup-id pamac-tray
+exec_always --no-startup-id nm-applet
+exec_always --no-startup-id variety
 exec_always --no-startup-id numlockx on
 exec_always --no-startup-id autotiling
 exec_always --no-startup-id picom --config ~/.config/i3/picom.conf
@@ -209,7 +219,7 @@ bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
 bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
-bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
+bindsym $mod+Shift+10 move container to workspace $ws9; workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10; workspace $ws10
 ####################### Functions
 # Resize function
@@ -309,12 +319,14 @@ mode "$mode_gaps_outer" {
 bar {
     height 25
     workspace_buttons yes
-    font pango: DejaVu Sans Mono 14
+    # font pango: DejaVu Sans Mono 14
+    font pango: FiraCode Nerd Font Mono 14
     position top
 
     # system icons
     # tray_output none
     tray_output $firstMonitor
+    # tray_output primary
     # tray_output $secondMonitor
 
     # OPTION 1 : i3status
@@ -324,7 +336,7 @@ bar {
     # Second one is the standard statusbar with my personal settings
 
     # status_command i3status
-    #status_command i3status -c ~/.config/i3/i3status.conf
+    # status_command i3status -c ~/.config/i3/i3status.conf
 
     # OPTION 2 : i3blocks
 
@@ -332,11 +344,11 @@ bar {
     # another way to provide text in the statusbar
     # put hastag in front if not installed
 
-     #status_command i3blocks
-     #status_command i3blocks -c ~/.config/i3/i3blocks.conf
-     #status_command i3blocks -c ~/.config/i3/i3blocks-rainbow.conf
-     status_command i3blocks -c ~/.config/i3/i3blocks-original.conf
-     #status_command i3blocks -c ~/.config/i3/i3blocks-awesome.conf
+     # status_command i3blocks
+     # status_command i3blocks -c ~/.config/i3/i3blocks.conf
+     # status_command i3blocks -c ~/.config/i3/i3blocks-rainbow.conf
+     # status_command i3blocks -c ~/.config/i3/i3blocks-original.conf
+     # status_command i3blocks -c ~/.config/i3/i3blocks-awesome.conf
 
 
     # OPTION 3 : conky
@@ -374,7 +386,7 @@ bar {
         focused_workspace       #2f343f $color5 #d8dee8
         active_workspace        #2f343f $color5 #d8dee8
         inactive_workspace      #2f343f $color8 #d8dee8
-        urgent_workspacei       #2f343f $color3 #2f343f
+        urgent_workspace       #2f343f $color3 #2f343f
     }
 
     #colors {
@@ -552,7 +564,7 @@ bindsym --release Print exec "scrot 'scrot-%Y-%m-%d_%h-%m-%s_$wx$h.png' -e 'mv $
 #bindsym Control+Print exec --no-startup-id xfce4-screenshooter
 #bindsym Control+Shift+Print exec --no-startup-id gnome-screenshot -i
 #bindsym control+mod1+a exec --no-startup-id xfce4-appfinder
-#bindsym control+mod1+p exec --no-startup-id pamac-manager
+#bindsym control+mod2+p exec --no-startup-id pamac-manager
 #bindsym $mod+Return exec --no-startup-id urxvt;focus
 #bindsym control+mod1+u exec --no-startup-id pavucontrol
 #bindsym control+Shift+Escape exec --no-startup-id xfce4-taskmanager;focus
