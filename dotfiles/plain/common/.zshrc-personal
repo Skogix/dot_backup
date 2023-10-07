@@ -16,7 +16,7 @@ alias starre="/usr/bin/setxkbmap se -option lv3:ralt_alt"
 alias zshrc="nvim ~/.zshrc-personal"
 alias i3rc="nvim ~/.config/i3/config"
 alias picomrc="nvim ~/.config/i3/picom.conf"
-alias vimrc="nvim ~/.config/nvim/init.vim"
+alias vimrc="nvim ~/.config/nvim/lua/custom/chadrc.lua"
 alias tmuxrc="nvim ~/.tmux.conf"
 alias term="alacritty -e tmux a &; ;disown; exit "
 #}}}
@@ -78,5 +78,9 @@ alias killwine="wineserver -k"
 # random rice
 alias rice1="cmatrix -r -a"
 alias rice2="cava"
+<<<<<<< HEAD
 alias win="cd /run/media/skogix/warez/"
 alias dwarffortress="wine \"/run/media/skogix/warez/games/Dwarf.Fortress/Dwarf Fortress.exe\""
+=======
+alias win="cd '/mnt/c/Documents and Settings/skogsemi/Documents/Virtual Machines/Shared'"
+>>>>>>> 855ed6b (.)

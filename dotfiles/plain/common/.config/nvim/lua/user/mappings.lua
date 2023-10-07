@@ -122,10 +122,19 @@ keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle.linewise(v
 -- keymap("n", "<leader>w<leader>", "<cmd>lua require'telekasten'.goto_today()<cr>", opts)
 -- keymap("n", "<leader>w<leader>w", "<cmd>lua require'telekasten'.goto_thisweek()<cr>", opts)
 -- keymap("n", "<leader><cr>", "<cmd>lua require'telekasten'.follow_link()<cr>", opts)
+<<<<<<< HEAD
 -- keymap("n", "<leader>,", "<cmd>cd ~/dot/dotfiles/plain/common/<cr><cmd>e ~/dot/dotfiles/plain/common/.config/nvim/init.lua<cr><cmd>Telescope find_files hidden=true<cr>")
 -- keymap("n", ",", "<cmd>Telescope find_files hidden=true<cr>")
 keymap("n", ";", ":")
 -- keymap("n", "todo", "<cmd>TW<cr>")
+=======
+keymap("n", "<leader>,",
+"<cmd>cd ~/dot/dotfiles/plain/common/<cr><cmd>e ~/dot/dotfiles/plain/common/.config/nvim/init.lua<cr><cmd>Telescope find_files hidden=true<cr>")
+keymap("n", ",", "<cmd>Telescope find_files hidden=true<cr>")
+keymap("n", ";", ":")
+keymap("n", "todo", "<cmd>TW<cr>")
+keymap("n", "dump", "<cmd>e /mnt/c/Documents and Settings/skogsemi/Documents/Virtual Machines/Shared/dump.md<cr>")
+>>>>>>> 855ed6b (.)
 keymap("n", "-", "<cmd>HopWordMW<cr>")
 keymap("n", "f", "<cmd>HopChar1CurrentLine<cr>")
 keymap("n", "sh", "<cmd>lua vim.lsp.buf.hover()<cr>")

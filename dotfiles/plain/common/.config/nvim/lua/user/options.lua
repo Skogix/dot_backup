@@ -1,4 +1,5 @@
 vim.g.python3_host_prog = "/usr/bin/python3"    -- python3 path
+-- vim.g.nvim_tree_respect_buf_cwd = 1             -- sets current working directory
 
 vim.opt.backup = false                          -- creates a backup file
 vim.opt.clipboard = "unnamedplus"               -- allows neovim to access the system clipboard
