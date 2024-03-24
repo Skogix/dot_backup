@@ -40,7 +40,6 @@ alias .5="cd ../../../../.."
 #}}}
 #{{{ editing
 # vim
-alias vi="neovide"
 alias vim="nvim"
 alias edit="nvim"
 # pacman
@@ -49,8 +48,7 @@ alias remove="sudo pacman -Rsc"
 alias update="sudo pacman -Syu"
 # tmux sessions
 alias config="tmux attach -t config"
-#}}}
-#{{{ org
+#}}} {{{ org
 alias readme="vim ~/org/wiki/index.wiki"
 alias rr="vim ~/org/wiki/index.wiki"
 #}}
@@ -81,6 +79,10 @@ alias rice2="cava"
 <<<<<<< HEAD
 alias win="cd /run/media/skogix/warez/"
 alias dwarffortress="wine \"/run/media/skogix/warez/games/Dwarf.Fortress/Dwarf Fortress.exe\""
+<<<<<<< HEAD
 =======
 alias win="cd '/mnt/c/Documents and Settings/skogsemi/Documents/Virtual Machines/Shared'"
 >>>>>>> 855ed6b (.)
+=======
+alias diskspace="du -h /home/skogix 2>/dev/null | grep '[0-9\.]\+G'"
+>>>>>>> 5388ff2 (.)
